@@ -38,5 +38,32 @@
 			"});"
 		],
 		"description": "Route definition skeleton"
+	},
+	 "migration": {
+		"prefix": "migration",
+		"body": [
+			"Schema::create('$1', function(Blueprint $table) {",
+			"});"
+		],
+		"description": "Migration Blueprint"
+	},
+	 "seed": {
+		"prefix": "seed",
+		"body": [
+			"DB::table('$1')->insert([",
+			"]);"
+		],
+		"description": "Method for filling seeds"
+	},
+	 "simple comment": {
+		"prefix": "simple-comment-function",
+		"body": [
+			"/**",
+			"* $1",
+			"*",
+			"* @return $2",
+			"*/"
+		],
+		"description": "A simple multiline comment for functions"
 	}
 }
