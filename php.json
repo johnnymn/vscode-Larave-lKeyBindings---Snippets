@@ -30,14 +30,14 @@
 		],
 		"description": "The skeleton of a Laravel style comment"
 	},
-		 "Route": {
-		"prefix": "route",
+		 "Route Clausure": {
+		"prefix": "route-clausure",
 		"body": [
 			"$app->get('$1', function ($2) use ($3) {",
 			"	$4",
 			"});"
 		],
-		"description": "Route definition skeleton"
+		"description": "Route with clauser function skeleton"
 	},
 	 "migration": {
 		"prefix": "migration",
@@ -106,7 +106,7 @@
 		"body": [
 			"<?php",
 			"",
-			"namespace App\\Http\\Contollers;",
+			"namespace App\\Http\\Controllers;",
 			"",
 			"use App\\Http\\Controllers\\Controller;",
 			"use Illuminate\\Http\\Request;",
@@ -186,6 +186,67 @@
 			"}"
 		],
 		"description": "Skeleton of a model relationship"
-	}	
+	},
 	
+	"Route-Controller Definition": {
+		"prefix": "route-controller",
+		"body": [
+			"$app->$1('$2', '$3Controller@$4');"
+		],
+		"description": "Controller handled route definition skeleton"
+	},	
+	"Route-Group-Middleware": {
+		"prefix": "route-group-middleware",
+		"body": [
+			"$app->group(['middleware' => '$1'], function ($app) {",
+			"	 $app->get('$2', function ()  {",
+			"	 });",
+			"});"			
+		],
+		"description": "Group of routes with middleware"
+	},
+	"Route Namespace": {
+		"prefix": "route-namespace",
+		"body": [
+			"$app->group(['namespace' => '$1'], function() {",
+			"});"			
+		],
+		"description": "Namespaces based routing"
+	},	
+	"Route Prefix": {
+		"prefix": "route-prefix",
+		"body": [
+			"$app->group(['prefix' => 'admin'], function ($app) {",
+			"});"			
+		],
+		"description": "Assign a prefix to all group routes"
+	},	
+	
+	"Autoload": {
+		"prefix": "autoload",
+		"body": [
+			"require __DIR__ . '/vendor/autoload.php';"
+		],
+		"description": "Composer Autoload Helper"
+	},	
+	
+	"Middleware Definition": {
+		"prefix": "middleware-definition",
+		"body": [
+			"<?php",
+			"",
+			"namespace App\\Http\\Middleware;",
+			"",
+			"use Closure;",
+			"",
+			"class $1Middleware",
+			"{",
+			"	 public function handle($request, Closure $next)",
+			"	 {",
+			"	 	 return $next;",
+			"	 }",
+			"}"
+		],
+		"description": "Middleware definition helper"
+	}		
 }
